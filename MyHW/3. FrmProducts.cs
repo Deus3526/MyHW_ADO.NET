@@ -15,7 +15,6 @@ namespace MyHomeWork
         public FrmProducts()
         {
             InitializeComponent();
-            //test
         }
 
         private void button3_Click(object sender, EventArgs e)
