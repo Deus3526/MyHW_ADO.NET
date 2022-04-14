@@ -1269,7 +1269,7 @@ namespace MyHW.CityPhotoDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MyHW.Properties.Settings.Default.CityPhotoConnectionString;
+            this._connection.ConnectionString = global::MyHW.Properties.Settings.Default.CityPhotoConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1596,7 +1596,7 @@ SELECT PhotoID, PhotoPicture, CityID FROM Photo WHERE (PhotoID = @PhotoID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MyHW.Properties.Settings.Default.CityPhotoConnectionString;
+            this._connection.ConnectionString = global::MyHW.Properties.Settings.Default.CityPhotoConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

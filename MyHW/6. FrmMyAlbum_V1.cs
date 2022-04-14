@@ -16,8 +16,8 @@ namespace MyHW
         public FrmMyAlbum_V1()
         {
             InitializeComponent();
-            photoTableAdapter1.Fill(cityPhotoDataSet1.Photo);
             cityTableAdapter1.Fill(cityPhotoDataSet1.City);
+            photoTableAdapter1.Fill(cityPhotoDataSet1.Photo);
             bindingSource1.DataSource = cityPhotoDataSet1.Photo;
 
 

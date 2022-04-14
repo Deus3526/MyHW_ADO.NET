@@ -2,14 +2,15 @@
 <xs:schema id="CityPhotoDataSet" targetNamespace="http://tempuri.org/CityPhotoDataSet.xsd" xmlns:mstns="http://tempuri.org/CityPhotoDataSet.xsd" xmlns="http://tempuri.org/CityPhotoDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CityPhotoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CityPhotoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MyHW.Properties.Settings.GlobalReference.Default.CityPhotoConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CityPhotoConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CityPhotoConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MyHW.Properties.Settings.GlobalReference.Default.CityPhotoConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CityTableAdapter" GeneratorDataComponentClassName="CityTableAdapter" Name="City" UserDataComponentName="CityTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="CityPhotoConnectionString (Settings)" DbObjectName="CityPhoto.dbo.City" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="CityPhotoConnectionString1 (Settings)" DbObjectName="dbo.City" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[City] WHERE (([CityID] = @Original_CityID) AND ((@IsNull_CityName = 1 AND [CityName] IS NULL) OR ([CityName] = @Original_CityName)))</CommandText>
@@ -58,7 +59,7 @@ SELECT CityID, CityName FROM City WHERE (CityID = @CityID)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PhotoTableAdapter" GeneratorDataComponentClassName="PhotoTableAdapter" Name="Photo" UserDataComponentName="PhotoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="CityPhotoConnectionString (Settings)" DbObjectName="CityPhoto.dbo.Photo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="CityPhotoConnectionString1 (Settings)" DbObjectName="dbo.Photo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Photo] WHERE (([PhotoID] = @Original_PhotoID) AND ((@IsNull_CityID = 1 AND [CityID] IS NULL) OR ([CityID] = @Original_CityID)))</CommandText>
@@ -113,7 +114,7 @@ SELECT PhotoID, PhotoPicture, CityID FROM Photo WHERE (PhotoID = @PhotoID)</Comm
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="CityPhotoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="CityPhotoDataSet" msprop:Generator_DataSetName="CityPhotoDataSet">
+  <xs:element name="CityPhotoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="CityPhotoDataSet" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CityPhotoDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="City" msprop:Generator_RowEvHandlerName="CityRowChangeEventHandler" msprop:Generator_RowDeletedName="CityRowDeleted" msprop:Generator_RowDeletingName="CityRowDeleting" msprop:Generator_RowEvArgName="CityRowChangeEvent" msprop:Generator_TablePropName="City" msprop:Generator_RowChangedName="CityRowChanged" msprop:Generator_RowChangingName="CityRowChanging" msprop:Generator_TableClassName="CityDataTable" msprop:Generator_RowClassName="CityRow" msprop:Generator_TableVarName="tableCity" msprop:Generator_UserTableName="City">
