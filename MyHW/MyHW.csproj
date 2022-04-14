@@ -64,6 +64,26 @@
     <Compile Include="3. FrmProducts.Designer.cs">
       <DependentUpon>3. FrmProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="5. FrmAdventureWorks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5. FrmAdventureWorks.designer.cs">
+      <DependentUpon>5. FrmAdventureWorks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6. FrmMyAlbum_V1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6. FrmMyAlbum_V1.Designer.cs">
+      <DependentUpon>6. FrmMyAlbum_V1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureWorksDataSet.cs">
+      <DependentUpon>AdventureWorksDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureWorksDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +115,12 @@
     <EmbeddedResource Include="4.FrmDataSet 結構.resx">
       <DependentUpon>4.FrmDataSet 結構.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="5. FrmAdventureWorks.resx">
+      <DependentUpon>5. FrmAdventureWorks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6. FrmMyAlbum_V1.resx">
+      <DependentUpon>6. FrmMyAlbum_V1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -104,6 +130,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="AdventureWorksDataSet.xsc">
+      <DependentUpon>AdventureWorksDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AdventureWorksDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdventureWorksDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AdventureWorksDataSet.xss">
+      <DependentUpon>AdventureWorksDataSet.xsd</DependentUpon>
+    </None>
     <None Include="NorthWindDataSet.xsc">
       <DependentUpon>NorthWindDataSet.xsd</DependentUpon>
     </None>
