@@ -84,6 +84,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdventureWorksDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CityPhotoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CityPhotoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +100,12 @@
     </Compile>
     <Compile Include="4.FrmDataSet 結構.Designer.cs">
       <DependentUpon>4.FrmDataSet 結構.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6.FrmMyAlbum_Table_Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.FrmMyAlbum_Table_Update.Designer.cs">
+      <DependentUpon>6.FrmMyAlbum_Table_Update.cs</DependentUpon>
     </Compile>
     <Compile Include="NorthWindDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -121,6 +132,9 @@
     <EmbeddedResource Include="6. FrmMyAlbum_V1.resx">
       <DependentUpon>6. FrmMyAlbum_V1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="6.FrmMyAlbum_Table_Update.resx">
+      <DependentUpon>6.FrmMyAlbum_Table_Update.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -140,6 +154,17 @@
     </None>
     <None Include="AdventureWorksDataSet.xss">
       <DependentUpon>AdventureWorksDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CityPhotoDataSet.xsc">
+      <DependentUpon>CityPhotoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CityPhotoDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CityPhotoDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CityPhotoDataSet.xss">
+      <DependentUpon>CityPhotoDataSet.xsd</DependentUpon>
     </None>
     <None Include="NorthWindDataSet.xsc">
       <DependentUpon>NorthWindDataSet.xsd</DependentUpon>
