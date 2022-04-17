@@ -63,5 +63,16 @@ namespace MyHW.Properties {
                 return ((string)(this["CityPhotoConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\HwMemberDataB" +
+            "ase.mdf;Integrated Security=True")]
+        public string HwMember {
+            get {
+                return ((string)(this["HwMember"]));
+            }
+        }
     }
 }
