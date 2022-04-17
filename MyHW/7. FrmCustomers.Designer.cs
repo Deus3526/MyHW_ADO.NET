@@ -53,6 +53,8 @@ namespace MyHW
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(149, 20);
             this.comboBox1.TabIndex = 4;
+            this.comboBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBox1_DrawItem);
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -65,10 +67,11 @@ namespace MyHW
             // 
             // listView1
             // 
+            this.listView1.ContextMenuStrip = this.contextMenuStrip2;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(64, 78);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(535, 234);
+            this.listView1.Size = new System.Drawing.Size(822, 433);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -82,25 +85,28 @@ namespace MyHW
             this.orderByToolStripMenuItem,
             this.groupByToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip1";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(164, 124);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(181, 146);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(163, 24);
             this.toolStripMenuItem1.Text = "Details View";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(163, 24);
             this.toolStripMenuItem2.Text = "Large Icon";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(163, 24);
             this.toolStripMenuItem3.Text = "Small Icon";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // orderByToolStripMenuItem
             // 
@@ -116,12 +122,14 @@ namespace MyHW
             this.customerIDAscToolStripMenuItem.Name = "customerIDAscToolStripMenuItem";
             this.customerIDAscToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.customerIDAscToolStripMenuItem.Text = "CustomerID Asc";
+            this.customerIDAscToolStripMenuItem.Click += new System.EventHandler(this.customerIDAscToolStripMenuItem_Click);
             // 
             // customerIDDescToolStripMenuItem
             // 
             this.customerIDDescToolStripMenuItem.Name = "customerIDDescToolStripMenuItem";
             this.customerIDDescToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.customerIDDescToolStripMenuItem.Text = "CustomerID Desc";
+            this.customerIDDescToolStripMenuItem.Click += new System.EventHandler(this.customerIDDescToolStripMenuItem_Click);
             // 
             // groupByToolStripMenuItem
             // 
@@ -129,30 +137,32 @@ namespace MyHW
             this.countryToolStripMenuItem,
             this.無ToolStripMenuItem});
             this.groupByToolStripMenuItem.Name = "groupByToolStripMenuItem";
-            this.groupByToolStripMenuItem.Size = new System.Drawing.Size(163, 24);
+            this.groupByToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.groupByToolStripMenuItem.Text = "Group by";
             // 
             // countryToolStripMenuItem
             // 
             this.countryToolStripMenuItem.Name = "countryToolStripMenuItem";
-            this.countryToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.countryToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.countryToolStripMenuItem.Text = "Country";
+            this.countryToolStripMenuItem.Click += new System.EventHandler(this.countryToolStripMenuItem_Click);
             // 
             // 無ToolStripMenuItem
             // 
             this.無ToolStripMenuItem.Name = "無ToolStripMenuItem";
-            this.無ToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
-            this.無ToolStripMenuItem.Text = "無";
+            this.無ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.無ToolStripMenuItem.Text = "Cancel Group";
+            this.無ToolStripMenuItem.Click += new System.EventHandler(this.cancelToolStripMenuItem_Click);
             // 
             // FrmCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 421);
+            this.ClientSize = new System.Drawing.Size(948, 574);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCustomers";
             this.Text = "FrmCustomers";
             this.contextMenuStrip2.ResumeLayout(false);
