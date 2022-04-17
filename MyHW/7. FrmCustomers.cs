@@ -17,6 +17,7 @@ namespace MyHW
         public FrmCustomers()
         {
             InitializeComponent();
+            LoadCountryToCombobox();
         }
 
 
@@ -25,8 +26,27 @@ namespace MyHW
         //1. All Country
         private void LoadCountryToCombobox()
         {
-            SqlConnection connect = new SqlConnection(Settings.Default.NorthwindConnectionString);
-        }
+            try
+            {
+                using(SqlConnection connect = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                {
+                    SqlCommand command = new SqlCommand("select distinct country from Customers",connect);
+                    connect.Open();
+                    SqlDataReader dataReader=command.ExecuteReader();
+                    
+                    while(dataReader.Read())
+                    {
+                        comboBox1.Items.Add(dataReader[0].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+         }
+
 
 
         //================================
