@@ -138,7 +138,7 @@ namespace MyHomeWork
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.LogoPictureBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLogon";
             this.Text = "FrmLogon";
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();

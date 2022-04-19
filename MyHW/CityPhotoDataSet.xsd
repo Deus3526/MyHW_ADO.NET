@@ -114,14 +114,14 @@ SELECT PhotoID, PhotoPicture, CityID FROM Photo WHERE (PhotoID = @PhotoID)</Comm
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="CityPhotoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="CityPhotoDataSet" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CityPhotoDataSet">
+  <xs:element name="CityPhotoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CityPhotoDataSet" msprop:Generator_UserDSName="CityPhotoDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="City" msprop:Generator_RowEvHandlerName="CityRowChangeEventHandler" msprop:Generator_RowDeletedName="CityRowDeleted" msprop:Generator_RowDeletingName="CityRowDeleting" msprop:Generator_RowEvArgName="CityRowChangeEvent" msprop:Generator_TablePropName="City" msprop:Generator_RowChangedName="CityRowChanged" msprop:Generator_RowChangingName="CityRowChanging" msprop:Generator_TableClassName="CityDataTable" msprop:Generator_RowClassName="CityRow" msprop:Generator_TableVarName="tableCity" msprop:Generator_UserTableName="City">
+        <xs:element name="City" msprop:Generator_TableClassName="CityDataTable" msprop:Generator_RowEvArgName="CityRowChangeEvent" msprop:Generator_TableVarName="tableCity" msprop:Generator_TablePropName="City" msprop:Generator_RowDeletingName="CityRowDeleting" msprop:Generator_RowChangingName="CityRowChanging" msprop:Generator_RowDeletedName="CityRowDeleted" msprop:Generator_RowEvHandlerName="CityRowChangeEventHandler" msprop:Generator_UserTableName="City" msprop:Generator_RowChangedName="CityRowChanged" msprop:Generator_RowClassName="CityRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="CityID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="CityID" msprop:Generator_ColumnPropNameInTable="CityIDColumn" msprop:Generator_ColumnVarNameInTable="columnCityID" msprop:Generator_UserColumnName="CityID" type="xs:int" />
-              <xs:element name="CityName" msprop:Generator_ColumnPropNameInRow="CityName" msprop:Generator_ColumnPropNameInTable="CityNameColumn" msprop:Generator_ColumnVarNameInTable="columnCityName" msprop:Generator_UserColumnName="CityName" minOccurs="0">
+              <xs:element name="CityID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCityID" msprop:Generator_ColumnPropNameInRow="CityID" msprop:Generator_ColumnPropNameInTable="CityIDColumn" msprop:Generator_UserColumnName="CityID" type="xs:int" />
+              <xs:element name="CityName" msprop:Generator_ColumnVarNameInTable="columnCityName" msprop:Generator_ColumnPropNameInRow="CityName" msprop:Generator_ColumnPropNameInTable="CityNameColumn" msprop:Generator_UserColumnName="CityName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -131,12 +131,12 @@ SELECT PhotoID, PhotoPicture, CityID FROM Photo WHERE (PhotoID = @PhotoID)</Comm
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Photo" msprop:Generator_RowEvHandlerName="PhotoRowChangeEventHandler" msprop:Generator_RowDeletedName="PhotoRowDeleted" msprop:Generator_RowDeletingName="PhotoRowDeleting" msprop:Generator_RowEvArgName="PhotoRowChangeEvent" msprop:Generator_TablePropName="Photo" msprop:Generator_RowChangedName="PhotoRowChanged" msprop:Generator_RowChangingName="PhotoRowChanging" msprop:Generator_TableClassName="PhotoDataTable" msprop:Generator_RowClassName="PhotoRow" msprop:Generator_TableVarName="tablePhoto" msprop:Generator_UserTableName="Photo">
+        <xs:element name="Photo" msprop:Generator_TableClassName="PhotoDataTable" msprop:Generator_RowEvArgName="PhotoRowChangeEvent" msprop:Generator_TableVarName="tablePhoto" msprop:Generator_TablePropName="Photo" msprop:Generator_RowDeletingName="PhotoRowDeleting" msprop:Generator_RowChangingName="PhotoRowChanging" msprop:Generator_RowDeletedName="PhotoRowDeleted" msprop:Generator_RowEvHandlerName="PhotoRowChangeEventHandler" msprop:Generator_UserTableName="Photo" msprop:Generator_RowChangedName="PhotoRowChanged" msprop:Generator_RowClassName="PhotoRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="PhotoID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="PhotoID" msprop:Generator_ColumnPropNameInTable="PhotoIDColumn" msprop:Generator_ColumnVarNameInTable="columnPhotoID" msprop:Generator_UserColumnName="PhotoID" type="xs:int" />
-              <xs:element name="PhotoPicture" msprop:Generator_ColumnPropNameInRow="PhotoPicture" msprop:Generator_ColumnPropNameInTable="PhotoPictureColumn" msprop:Generator_ColumnVarNameInTable="columnPhotoPicture" msprop:Generator_UserColumnName="PhotoPicture" type="xs:base64Binary" minOccurs="0" />
-              <xs:element name="CityID" msprop:Generator_ColumnPropNameInRow="CityID" msprop:Generator_ColumnPropNameInTable="CityIDColumn" msprop:Generator_ColumnVarNameInTable="columnCityID" msprop:Generator_UserColumnName="CityID" type="xs:int" minOccurs="0" />
+              <xs:element name="PhotoID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPhotoID" msprop:Generator_ColumnPropNameInRow="PhotoID" msprop:Generator_ColumnPropNameInTable="PhotoIDColumn" msprop:Generator_UserColumnName="PhotoID" type="xs:int" />
+              <xs:element name="PhotoPicture" msprop:Generator_ColumnVarNameInTable="columnPhotoPicture" msprop:Generator_ColumnPropNameInRow="PhotoPicture" msprop:Generator_ColumnPropNameInTable="PhotoPictureColumn" msprop:Generator_UserColumnName="PhotoPicture" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="CityID" msprop:Generator_ColumnVarNameInTable="columnCityID" msprop:Generator_ColumnPropNameInRow="CityID" msprop:Generator_ColumnPropNameInTable="CityIDColumn" msprop:Generator_UserColumnName="CityID" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -153,7 +153,7 @@ SELECT PhotoID, PhotoPicture, CityID FROM Photo WHERE (PhotoID = @PhotoID)</Comm
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Photo_City" msdata:parent="City" msdata:child="Photo" msdata:parentkey="CityID" msdata:childkey="CityID" msprop:Generator_UserParentTable="City" msprop:Generator_UserChildTable="Photo" msprop:Generator_RelationVarName="relationFK_Photo_City" msprop:Generator_ChildPropName="GetPhotoRows" msprop:Generator_ParentPropName="CityRow" msprop:Generator_UserRelationName="FK_Photo_City" />
+      <msdata:Relationship name="FK_Photo_City" msdata:parent="City" msdata:child="Photo" msdata:parentkey="CityID" msdata:childkey="CityID" msprop:Generator_UserChildTable="Photo" msprop:Generator_ChildPropName="GetPhotoRows" msprop:Generator_UserRelationName="FK_Photo_City" msprop:Generator_RelationVarName="relationFK_Photo_City" msprop:Generator_UserParentTable="City" msprop:Generator_ParentPropName="CityRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

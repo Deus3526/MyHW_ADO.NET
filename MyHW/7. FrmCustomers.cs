@@ -110,8 +110,8 @@ namespace MyHW
             bool status = true;
             if(listView1.Items.Count==0||listView1.ShowGroups==false) status = false;
             listView1.Visible= false;
-            listView1.ShowGroups = true;
             listView1.Items.Clear();
+            listView1.ShowGroups = true;
             using (SqlConnection connect = new SqlConnection(Settings.Default.NorthwindConnectionString))
             {
                 connect.Open();
@@ -167,12 +167,14 @@ namespace MyHW
         {
             listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             listView1.Sort();
+           // MessageBox.Show(listView1.Groups[0].Items[0].ToString());
         }
 
         private void customerIDDescToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listView1.Sorting = System.Windows.Forms.SortOrder.Descending;
             listView1.Sort();
+           // MessageBox.Show(listView1.Groups[0].Items[0].ToString());
         }
 
         private void countryToolStripMenuItem_Click(object sender, EventArgs e)

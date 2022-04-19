@@ -32,14 +32,14 @@ namespace MyHW
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cityPhotoDataSet1 = new MyHW.CityPhotoDataSet();
-            this.cityTableAdapter1 = new MyHW.CityPhotoDataSetTableAdapters.CityTableAdapter();
-            this.photoTableAdapter1 = new MyHW.CityPhotoDataSetTableAdapters.PhotoTableAdapter();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.cityPhotoDataSet1)).BeginInit();
+            this.cityPhotoDataSet1 = new MyHW.CityPhotoDataSet();
+            this.cityTableAdapter1 = new MyHW.CityPhotoDataSetTableAdapters.CityTableAdapter();
+            this.photoTableAdapter1 = new MyHW.CityPhotoDataSetTableAdapters.PhotoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityPhotoDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -67,19 +67,6 @@ namespace MyHW
             this.label1.Text = "My Album";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cityPhotoDataSet1
-            // 
-            this.cityPhotoDataSet1.DataSetName = "CityPhotoDataSet";
-            this.cityPhotoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cityTableAdapter1
-            // 
-            this.cityTableAdapter1.ClearBeforeFill = true;
-            // 
-            // photoTableAdapter1
-            // 
-            this.photoTableAdapter1.ClearBeforeFill = true;
-            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -96,6 +83,19 @@ namespace MyHW
             this.panel2.Size = new System.Drawing.Size(977, 624);
             this.panel2.TabIndex = 6;
             // 
+            // cityPhotoDataSet1
+            // 
+            this.cityPhotoDataSet1.DataSetName = "CityPhotoDataSet";
+            this.cityPhotoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cityTableAdapter1
+            // 
+            this.cityTableAdapter1.ClearBeforeFill = true;
+            // 
+            // photoTableAdapter1
+            // 
+            this.photoTableAdapter1.ClearBeforeFill = true;
+            // 
             // FrmMyAlbum_V1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -108,8 +108,8 @@ namespace MyHW
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMyAlbum_V1";
             this.Text = "FrmMyAlbum_V1";
-            ((System.ComponentModel.ISupportInitialize)(this.cityPhotoDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityPhotoDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -118,11 +118,11 @@ namespace MyHW
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private CityPhotoDataSet cityPhotoDataSet1;
-        private CityPhotoDataSetTableAdapters.CityTableAdapter cityTableAdapter1;
-        private CityPhotoDataSetTableAdapters.PhotoTableAdapter photoTableAdapter1;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private CityPhotoDataSet cityPhotoDataSet1;
+        private CityPhotoDataSetTableAdapters.CityTableAdapter cityTableAdapter1;
+        private CityPhotoDataSetTableAdapters.PhotoTableAdapter photoTableAdapter1;
     }
 }

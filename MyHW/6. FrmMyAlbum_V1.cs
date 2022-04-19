@@ -21,10 +21,10 @@ namespace MyHW
             bindingSource1.DataSource = cityPhotoDataSet1.Photo;
             //MessageBox.Show(cityTableAdapter1.Connection.ConnectionString);
 
-
-            for(int i = 0; i < cityPhotoDataSet1.City.Rows.Count; i++)
+            MessageBox.Show("???");
+            for (int i = 0; i < cityPhotoDataSet1.City.Rows.Count; i++)
             {
-                LinkLabel x=new LinkLabel();
+                LinkLabel x = new LinkLabel();
                 panel1.Controls.Add(x);
                 x.Top = 50 * i;
                 x.Text = cityPhotoDataSet1.City[i].CityName.ToString();
