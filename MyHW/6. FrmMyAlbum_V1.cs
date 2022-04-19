@@ -19,9 +19,7 @@ namespace MyHW
             cityTableAdapter1.Fill(cityPhotoDataSet1.City);
             photoTableAdapter1.Fill(cityPhotoDataSet1.Photo);
             bindingSource1.DataSource = cityPhotoDataSet1.Photo;
-            //MessageBox.Show(cityTableAdapter1.Connection.ConnectionString);
 
-            MessageBox.Show("???");
             for (int i = 0; i < cityPhotoDataSet1.City.Rows.Count; i++)
             {
                 LinkLabel x = new LinkLabel();

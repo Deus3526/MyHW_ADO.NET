@@ -20,7 +20,7 @@ namespace MyHW
             LoadDataIntoTreeviewByForeach("Country", "City", "CustomerID");
             // LoadDataIntoTreeview();
 
-            AddCountOfEverySubNode();
+            AddCountOfSubNodeForEveryNode();
 
         }
         private void LoadDataIntoTreeviewByForeach(params string[] columnNode)
@@ -52,8 +52,6 @@ namespace MyHW
                                     tempNode = newNode;
                                 }
                                 else tempNode = treeView1.Nodes[columnNodeValue];
-                               // if (columnNodeValue == "USA") MessageBox.Show(datareader["city"].ToString());
-                                //tempNode.Text = tempNode.Name + $"---({tempNode.Nodes.Count})";
                             }
 
                             else if (tempNode.Nodes[columnNodeValue] == null)
@@ -133,7 +131,7 @@ namespace MyHW
             }
         }
 
-        private void AddCountOfEverySubNode()
+        private void AddCountOfSubNodeForEveryNode()
         {
             foreach (TreeNode node in treeView1.Nodes)
             {
