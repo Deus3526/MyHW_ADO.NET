@@ -41,26 +41,23 @@ namespace MyHW
                         foreach (string item in columnNode)
                         {
                             string columnNodeValue = datareader[item].ToString();
+
+
                             if (tempNode == null)
                             {
                                 if (treeView1.Nodes[columnNodeValue] == null)
                                 {
-                                    TreeNode newNode = new TreeNode(columnNodeValue);
-                                    newNode.Name = columnNodeValue;
-                                    newNode.Tag = item;
-                                    treeView1.Nodes.Add(newNode);
-                                    tempNode = newNode;
+                                    tempNode=treeView1.Nodes.Add(columnNodeValue,columnNodeValue);
+                                    tempNode.Tag=item;
                                 }
                                 else tempNode = treeView1.Nodes[columnNodeValue];
                             }
 
+
                             else if (tempNode.Nodes[columnNodeValue] == null)
                             {
-                                TreeNode newNode = new TreeNode(columnNodeValue);
-                                newNode.Name = columnNodeValue;
-                                newNode.Tag = item;
-                                tempNode.Nodes.Add(newNode);
-                                tempNode = newNode;
+                                tempNode=tempNode.Nodes.Add(columnNodeValue,columnNodeValue);
+                                tempNode.Tag=item;
                             }
                             else tempNode = tempNode.Nodes[columnNodeValue];
 
@@ -70,7 +67,7 @@ namespace MyHW
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "  Error");
+                MessageBox.Show(ex.Message + "  Error1");
             }
         }
 
@@ -98,6 +95,7 @@ namespace MyHW
                             newNode.Tag = "Country";
                             treeView1.Nodes.Add(newNode);
                             tempNode = newNode;
+
                         }
                         else tempNode = treeView1.Nodes[country];
 
@@ -127,7 +125,7 @@ namespace MyHW
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "  Error");
+                MessageBox.Show(ex.Message + "  Error2");
             }
         }
 
@@ -172,7 +170,7 @@ namespace MyHW
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "  Error");
+                MessageBox.Show(ex.Message + "  Error3");
             }
         }
     }
