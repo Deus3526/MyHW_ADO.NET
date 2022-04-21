@@ -166,14 +166,14 @@ namespace MyHW
         private void customerIDAscToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            listView1.Sort();
+           // listView1.Sort();
            // MessageBox.Show(listView1.Groups[0].Items[0].ToString());
         }
 
         private void customerIDDescToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listView1.Sorting = System.Windows.Forms.SortOrder.Descending;
-            listView1.Sort();
+           // listView1.Sort();
            // MessageBox.Show(listView1.Groups[0].Items[0].ToString());
         }
 

@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace MyHW
 {
-    public partial class FrmHomeWork : Form
+    public partial class Frm標準練習 : Form
     {
-        public FrmHomeWork()
+        public Frm標準練習()
         {
             InitializeComponent();
         }

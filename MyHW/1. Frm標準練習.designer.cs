@@ -1,7 +1,7 @@
 ﻿
-namespace WindowsFormsApp1
+namespace MyHW
 {
-    partial class FrmHomeWork
+    partial class Frm標準練習
     {
         /// <summary>
         /// Required designer variable.

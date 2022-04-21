@@ -111,6 +111,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdventureWorksDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="8.FrmMyAlbum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="8.FrmMyAlbum.Designer.cs">
+      <DependentUpon>8.FrmMyAlbum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="CityPhotoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -174,8 +186,14 @@
     <EmbeddedResource Include="7. FrmLogon.resx">
       <DependentUpon>7. FrmLogon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="8.FrmMyAlbum.resx">
+      <DependentUpon>8.FrmMyAlbum.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="8.FrmTreeview.resx">
       <DependentUpon>8.FrmTreeview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
