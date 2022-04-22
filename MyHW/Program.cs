@@ -18,7 +18,15 @@ namespace MyHW
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMyAlbum());
+
+
+            Application.Run(new HomePage());
+
+            //if((new FrmLogon()).ShowDialog()==DialogResult.OK)
+            //{
+            //    Application.Run(new HomePage());
+            //}
+
         }
     }
 }

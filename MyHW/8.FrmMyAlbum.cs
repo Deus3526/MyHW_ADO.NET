@@ -64,7 +64,7 @@ namespace MyHW
             dataAdapter = new SqlDataAdapter(command.CommandText, connection);
             ds = new DataSet();
             dataAdapter.Fill(ds,"Photo");
-            MessageBox.Show(ds.Tables[0].TableName);
+            //MessageBox.Show(ds.Tables[0].TableName);
             foreach(DataRow row in ds.Tables["Photo"].Rows)
             {
                 PictureBox pictureBox = new PictureBox();
