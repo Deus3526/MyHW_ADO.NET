@@ -20,7 +20,9 @@ namespace MyHW
 
         private void OpenFormInPanle2(Form form)
         {
+            
             form.TopLevel = false;
+            splitContainer1.Panel2.Controls.Clear();
             splitContainer1.Panel2.Controls.Add(form);
             form.Show();
         }
