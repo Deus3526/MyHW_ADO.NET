@@ -48,7 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -146,6 +148,12 @@
     <Compile Include="6.FrmMyAlbum_Table_Update.Designer.cs">
       <DependentUpon>6.FrmMyAlbum_Table_Update.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyAlbum_Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyAlbum_Viewer.Designer.cs">
+      <DependentUpon>MyAlbum_Viewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="NorthWindDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -194,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyAlbum_Viewer.resx">
+      <DependentUpon>MyAlbum_Viewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

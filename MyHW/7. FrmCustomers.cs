@@ -12,8 +12,11 @@ using MyHW.Properties;
 
 namespace MyHW
 {
+    enum Status_Order { No, Asc, Desc };
     public partial class FrmCustomers : Form
     {
+        bool status_Group = false;
+       Status_Order status_Order = Status_Order.No;
         public FrmCustomers()
         {
             InitializeComponent();
@@ -106,9 +109,7 @@ namespace MyHW
         }
         private void LoadDataIntoListview(bool allCountry)
         {
-
-            bool status = true;
-            if(listView1.Items.Count==0||listView1.ShowGroups==false) status = false;
+            
             listView1.Visible= false;
             listView1.Items.Clear();
             listView1.ShowGroups = true;
@@ -116,11 +117,24 @@ namespace MyHW
             {
                 connect.Open();
                 SqlCommand command = null;
-                if (allCountry == true) command = new SqlCommand("Select * from Customers", connect);
+                if (allCountry == true)
+                {
+                    command = new SqlCommand("Select * from Customers", connect);
+                }
                 else
                 {
                     command = new SqlCommand($"select * from Customers where country='{comboBox1.Text}'", connect);
                 }
+
+                if (status_Order == Status_Order.Asc)
+                {
+                    command.CommandText += " order by customerid asc";
+                }
+                else if(status_Order == Status_Order.Desc)
+                {
+                    command.CommandText += " order by customerid desc";
+                }
+
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
@@ -145,7 +159,7 @@ namespace MyHW
                 group.Header = group.Name + $"--({group.Items.Count})";
             }
             listView1.Visible = true;
-            if (status == false) listView1.ShowGroups = false;
+            if (status_Group == false) listView1.ShowGroups = false;
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -165,26 +179,35 @@ namespace MyHW
 
         private void customerIDAscToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
-           // listView1.Sort();
-           // MessageBox.Show(listView1.Groups[0].Items[0].ToString());
+            status_Order = Status_Order.Asc;
+            if (comboBox1.Text == "All Country") LoadDataIntoListview(true);
+            else LoadDataIntoListview(false);
         }
 
         private void customerIDDescToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listView1.Sorting = System.Windows.Forms.SortOrder.Descending;
-           // listView1.Sort();
-           // MessageBox.Show(listView1.Groups[0].Items[0].ToString());
+            status_Order = Status_Order.Desc;
+            if (comboBox1.Text == "All Country") LoadDataIntoListview(true);
+            else LoadDataIntoListview(false);
         }
 
         private void countryToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            status_Group = true;
             listView1.ShowGroups = true;
         }
 
         private void cancelToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            status_Group= false;
             listView1.ShowGroups = false;
+        }
+
+        private void noOrederToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            status_Order = Status_Order.No;
+            if (comboBox1.Text == "All Country") LoadDataIntoListview(true);
+            else LoadDataIntoListview(false);
         }
 
 

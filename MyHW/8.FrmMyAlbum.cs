@@ -26,7 +26,7 @@ namespace MyHW
             connection = new SqlConnection(Settings.Default.CityPhotoConnectionString);
             command = new SqlCommand("null", connection);
             LoadInitialData();
-            tabControl1.SelectedIndex = 1;
+            tabControl1.SelectedIndex = 0;
 
 
         }
@@ -62,7 +62,7 @@ namespace MyHW
             flowLayoutPanel1.Controls.Clear();
             LinkLabel linkLabel = (LinkLabel)sender;
             connection.Open();
-            command.CommandText =$"select PhotoPicture from Photo where CityID ={linkLabel.Tag}";
+            command.CommandText =$"select * from Photo where CityID ={linkLabel.Tag}";
             dataAdapter = new SqlDataAdapter(command.CommandText, connection);
             ds = new DataSet();
             dataAdapter.Fill(ds,"Photo");
@@ -70,6 +70,13 @@ namespace MyHW
             foreach(DataRow row in ds.Tables["Photo"].Rows)
             {
                 PictureBox pictureBox = BuildPictureBox();
+                object[] picture=new object[2]
+                  {
+                    linkLabel.Tag,
+                    (int)row["PhotoID"]
+                };
+                pictureBox.Tag =picture;
+                pictureBox.Click += PictureBox_Click;
                 flowLayoutPanel1.Controls.Add(pictureBox);
                 Byte[] bytes =(Byte[])row["PhotoPicture"];
                 System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes);
@@ -78,11 +85,18 @@ namespace MyHW
             connection.Close();
         }
 
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+            PictureBox pictureBox= (PictureBox)sender;
+            MyAlbum_Viewer form = new MyAlbum_Viewer((object[])pictureBox.Tag);
+            form.Show();
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             flowLayoutPanel2.Controls.Clear();
             connection.Open();
-            command.CommandText = $"select PhotoPicture from Photo join City on City.CityID=Photo.CityID where CityName ='{comboBox1.Text}'";
+            command.CommandText = $"select PhotoPicture,CityID from Photo join City on City.CityID=Photo.CityID where CityName ='{comboBox1.Text}'";
             dataAdapter = new SqlDataAdapter(command.CommandText, connection);
             ds = new DataSet();
             dataAdapter.Fill(ds, "Photo");
@@ -165,11 +179,52 @@ namespace MyHW
             PictureBox pictureBox = new PictureBox();
             pictureBox.Size = new Size(200, 150);
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.MouseMove += PictureBox_MouseMove;
+            pictureBox.MouseLeave += PictureBox_MouseLeave;
             return pictureBox;
+        }
+
+
+        private void PictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            pictureBox.Refresh();
+        }
+
+        private void PictureBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            PictureBox pictureBox=(PictureBox)sender;
+            System.Drawing.Graphics g=pictureBox.CreateGraphics();
+            pictureBox.CreateGraphics().DrawRectangle(new Pen(Color.Red, 10),pictureBox.DisplayRectangle);
         }
 
         private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
         {
+        }
+
+        private void photoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.photoBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.cityPhotoDataSet);
+
+        }
+
+        private void FrmMyAlbum_Load(object sender, EventArgs e)
+        {
+            // TODO: 這行程式碼會將資料載入 'cityPhotoDataSet.City' 資料表。您可以視需要進行移動或移除。
+            this.cityTableAdapter.Fill(this.cityPhotoDataSet.City);
+            // TODO: 這行程式碼會將資料載入 'cityPhotoDataSet.Photo' 資料表。您可以視需要進行移動或移除。
+            this.photoTableAdapter.Fill(this.cityPhotoDataSet.Photo);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog1.ShowDialog()==DialogResult.OK)
+            {
+                photoPicturePictureBox.Image = Image.FromFile(openFileDialog1.FileName);
+            }
         }
     }
 }
