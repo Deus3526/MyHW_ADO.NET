@@ -28,7 +28,6 @@ namespace MyHW
             LoadInitialData();
             tabControl1.SelectedIndex = 0;
 
-
         }
         private void LoadInitialData()
         {
@@ -179,8 +178,10 @@ namespace MyHW
             PictureBox pictureBox = new PictureBox();
             pictureBox.Size = new Size(200, 150);
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.BorderStyle = BorderStyle.Fixed3D;
             pictureBox.MouseMove += PictureBox_MouseMove;
             pictureBox.MouseLeave += PictureBox_MouseLeave;
+            pictureBox.Padding = new Padding(5, 5, 5, 5);
             return pictureBox;
         }
 
@@ -195,7 +196,9 @@ namespace MyHW
         {
             PictureBox pictureBox=(PictureBox)sender;
             System.Drawing.Graphics g=pictureBox.CreateGraphics();
-            pictureBox.CreateGraphics().DrawRectangle(new Pen(Color.Red, 10),pictureBox.DisplayRectangle);
+            Pen pen = new Pen(Color.Red,5);
+            pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
+            pictureBox.CreateGraphics().DrawRectangle(pen,pictureBox.DisplayRectangle);
         }
 
         private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
@@ -210,21 +213,32 @@ namespace MyHW
 
         }
 
-        private void FrmMyAlbum_Load(object sender, EventArgs e)
+        private void FrmMyAlbum_Load_City(object sender, EventArgs e)
         {
             // TODO: 這行程式碼會將資料載入 'cityPhotoDataSet.City' 資料表。您可以視需要進行移動或移除。
             this.cityTableAdapter.Fill(this.cityPhotoDataSet.City);
             // TODO: 這行程式碼會將資料載入 'cityPhotoDataSet.Photo' 資料表。您可以視需要進行移動或移除。
-            this.photoTableAdapter.Fill(this.cityPhotoDataSet.Photo);
 
+            cityBindingSource.Position = 0;
+        }
+        private void FrmMyAlbum_Load_Photo()
+        {
+            //MessageBox.Show(cityIDTextBox.Text);
+            photoTableAdapter.FillByCityID(cityPhotoDataSet.Photo, int.Parse(cityIDTextBox.Text));
+            //this.photoTableAdapter.Fill(this.cityPhotoDataSet.Photo);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+    private void button2_Click(object sender, EventArgs e)
         {
             if(openFileDialog1.ShowDialog()==DialogResult.OK)
             {
                 photoPicturePictureBox.Image = Image.FromFile(openFileDialog1.FileName);
             }
+        }
+
+        private void cityIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+            FrmMyAlbum_Load_Photo();
         }
     }
 }

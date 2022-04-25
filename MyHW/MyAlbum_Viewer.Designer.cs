@@ -47,9 +47,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(149, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(44, 35);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(677, 454);
+            this.pictureBox1.Size = new System.Drawing.Size(709, 65);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -62,9 +62,9 @@
             this.toolStripButton3,
             this.toolStripButton2,
             this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 614);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 383);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(989, 26);
+            this.toolStrip1.Size = new System.Drawing.Size(790, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -73,7 +73,7 @@
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(89, 23);
+            this.toolStripButton4.Size = new System.Drawing.Size(75, 22);
             this.toolStripButton4.Text = "實際大小";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
@@ -82,7 +82,7 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(74, 23);
+            this.toolStripButton3.Size = new System.Drawing.Size(63, 22);
             this.toolStripButton3.Text = "上一張";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
@@ -91,7 +91,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(89, 23);
+            this.toolStripButton2.Size = new System.Drawing.Size(75, 22);
             this.toolStripButton2.Text = "自動撥放";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -100,13 +100,17 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(74, 23);
+            this.toolStripButton1.Size = new System.Drawing.Size(63, 22);
             this.toolStripButton1.Text = "下一張";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.PositionChanged += new System.EventHandler(this.bindingSource1_PositionChanged);
+            // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(723, 588);
+            this.trackBar1.Location = new System.Drawing.Point(460, 335);
             this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(258, 45);
@@ -123,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 640);
+            this.ClientSize = new System.Drawing.Size(790, 408);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pictureBox1);

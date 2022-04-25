@@ -18,6 +18,7 @@ namespace MyHW
         int PhotoID;
         int CityID;
         DataSet ds;
+        bool status_Size=false;
         Size size;
         public MyAlbum_Viewer( object[] picture)
         {
@@ -38,13 +39,12 @@ namespace MyHW
                 pictureBox1.DataBindings.Add("Image", bindingSource1, "PhotoPicture",true);
 
 
-                //pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+                pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+                status_Size = false;
                 //MessageBox.Show("" + pictureBox1.Width + " " + pictureBox1.Height);
                 //MessageBox.Show("" + pictureBox1.ClientSize.Width + " " + pictureBox1.ClientSize.Height);
-
-                size =new Size(pictureBox1.DataBindings.Control.Size.Width, pictureBox1.DataBindings.Control.Height);
-
-                //MessageBox.Show(""+size.Width+" "+Size.Height);
+                //Size size1 = new Size(pictureBox1.Width, pictureBox1.Height);
+                //MessageBox.Show("" + size1.Width + "      " + size1.Height);
             }
 
 
@@ -62,13 +62,15 @@ namespace MyHW
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
+            SetSize();
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.Size = new Size(size.Width*trackBar1.Value,size.Height*trackBar1.Value);
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            pictureBox1.Size = new Size(size.Width, size.Height);
+            pictureBox1.Size = size;
+            trackBar1.Value = 1;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -83,6 +85,21 @@ namespace MyHW
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             timer1.Enabled = !timer1.Enabled;
+        }
+        private void SetSize()
+        {
+            if (status_Size == true) return;
+            else if(status_Size==false)
+            {
+                size = new Size(pictureBox1.Width, pictureBox1.Height);
+                status_Size = true;
+            }
+        }
+
+        private void bindingSource1_PositionChanged(object sender, EventArgs e)
+        {
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            status_Size = false;
         }
     }
 }
