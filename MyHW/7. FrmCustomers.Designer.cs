@@ -40,10 +40,10 @@ namespace MyHW
             this.orderByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerIDAscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerIDDescToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.noOrederToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.countryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.無ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.noOrederToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,26 +86,26 @@ namespace MyHW
             this.orderByToolStripMenuItem,
             this.groupByToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip1";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(181, 146);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(181, 136);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(163, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "Details View";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(163, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2.Text = "Large Icon";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(163, 24);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem3.Text = "Small Icon";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
@@ -116,22 +116,29 @@ namespace MyHW
             this.customerIDDescToolStripMenuItem,
             this.noOrederToolStripMenuItem});
             this.orderByToolStripMenuItem.Name = "orderByToolStripMenuItem";
-            this.orderByToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.orderByToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.orderByToolStripMenuItem.Text = "Order by";
             // 
             // customerIDAscToolStripMenuItem
             // 
             this.customerIDAscToolStripMenuItem.Name = "customerIDAscToolStripMenuItem";
-            this.customerIDAscToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.customerIDAscToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.customerIDAscToolStripMenuItem.Text = "CustomerID Asc";
             this.customerIDAscToolStripMenuItem.Click += new System.EventHandler(this.customerIDAscToolStripMenuItem_Click);
             // 
             // customerIDDescToolStripMenuItem
             // 
             this.customerIDDescToolStripMenuItem.Name = "customerIDDescToolStripMenuItem";
-            this.customerIDDescToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.customerIDDescToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.customerIDDescToolStripMenuItem.Text = "CustomerID Desc";
             this.customerIDDescToolStripMenuItem.Click += new System.EventHandler(this.customerIDDescToolStripMenuItem_Click);
+            // 
+            // noOrederToolStripMenuItem
+            // 
+            this.noOrederToolStripMenuItem.Name = "noOrederToolStripMenuItem";
+            this.noOrederToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.noOrederToolStripMenuItem.Text = "No Oreder";
+            this.noOrederToolStripMenuItem.Click += new System.EventHandler(this.noOrderToolStripMenuItem_Click);
             // 
             // groupByToolStripMenuItem
             // 
@@ -139,29 +146,22 @@ namespace MyHW
             this.countryToolStripMenuItem,
             this.無ToolStripMenuItem});
             this.groupByToolStripMenuItem.Name = "groupByToolStripMenuItem";
-            this.groupByToolStripMenuItem.Size = new System.Drawing.Size(163, 24);
+            this.groupByToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.groupByToolStripMenuItem.Text = "Group by";
             // 
             // countryToolStripMenuItem
             // 
             this.countryToolStripMenuItem.Name = "countryToolStripMenuItem";
-            this.countryToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
+            this.countryToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.countryToolStripMenuItem.Text = "Country";
             this.countryToolStripMenuItem.Click += new System.EventHandler(this.countryToolStripMenuItem_Click);
             // 
             // 無ToolStripMenuItem
             // 
             this.無ToolStripMenuItem.Name = "無ToolStripMenuItem";
-            this.無ToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
+            this.無ToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.無ToolStripMenuItem.Text = "Cancel Group";
             this.無ToolStripMenuItem.Click += new System.EventHandler(this.cancelToolStripMenuItem_Click);
-            // 
-            // noOrederToolStripMenuItem
-            // 
-            this.noOrederToolStripMenuItem.Name = "noOrederToolStripMenuItem";
-            this.noOrederToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
-            this.noOrederToolStripMenuItem.Text = "No Oreder";
-            this.noOrederToolStripMenuItem.Click += new System.EventHandler(this.noOrederToolStripMenuItem_Click);
             // 
             // FrmCustomers
             // 

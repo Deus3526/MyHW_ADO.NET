@@ -19,7 +19,8 @@ namespace MyHW
         SqlCommand command;
         SqlDataReader dataReader;
         SqlDataAdapter dataAdapter;
-        DataSet ds;
+        DataSet ds; 
+        PictureBox picture_ContextOpen;
         public FrmMyAlbum()
         {
             InitializeComponent();
@@ -95,7 +96,7 @@ namespace MyHW
         {
             flowLayoutPanel2.Controls.Clear();
             connection.Open();
-            command.CommandText = $"select PhotoPicture,CityID from Photo join City on City.CityID=Photo.CityID where CityName ='{comboBox1.Text}'";
+            command.CommandText = $"select PhotoPicture,Photo.CityID,PhotoID from Photo join City on City.CityID=Photo.CityID where CityName ='{comboBox1.Text}'";
             dataAdapter = new SqlDataAdapter(command.CommandText, connection);
             ds = new DataSet();
             dataAdapter.Fill(ds, "Photo");
@@ -103,12 +104,16 @@ namespace MyHW
             foreach (DataRow row in ds.Tables["Photo"].Rows)
             {
                 PictureBox pictureBox = BuildPictureBox();
+                pictureBox.Tag = row["PhotoID"];
                 flowLayoutPanel2.Controls.Add(pictureBox);
                 Byte[] bytes = (Byte[])row["PhotoPicture"];
                 System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes);
                 pictureBox.Image = Image.FromStream(ms);
+
+                pictureBox.ContextMenuStrip = contextMenuStrip1;
+
+                connection.Close();
             }
-            connection.Close();
 
         }
 
@@ -239,6 +244,21 @@ namespace MyHW
         private void cityIDTextBox_TextChanged(object sender, EventArgs e)
         {
             FrmMyAlbum_Load_Photo();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            command.CommandText = $"Delete Photo where PhotoID ={picture_ContextOpen.Tag}";
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+            picture_ContextOpen.Dispose();
+        }
+
+        //再刪除時，我要知道是哪個PictureBox開啟這個選單
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            picture_ContextOpen = (PictureBox)((ContextMenuStrip)sender).SourceControl;
         }
     }
 }

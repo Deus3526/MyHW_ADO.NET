@@ -142,7 +142,6 @@ namespace MyHW
                     ListViewItem lvi = listView1.Items.Add(dataReader[0].ToString());
                     listView1.Groups[country].Items.Add(lvi);
 
-
                     for (int i = 1; i < dataReader.FieldCount; i++)
                     {
                         if (dataReader.IsDBNull(i)) lvi.SubItems.Add("空值");
@@ -160,6 +159,7 @@ namespace MyHW
             }
             listView1.Visible = true;
             if (status_Group == false) listView1.ShowGroups = false;
+            PaintColorOnItem();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -193,6 +193,7 @@ namespace MyHW
 
         private void countryToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            EraserColorOnItem();
             status_Group = true;
             listView1.ShowGroups = true;
         }
@@ -201,15 +202,37 @@ namespace MyHW
         {
             status_Group= false;
             listView1.ShowGroups = false;
+            PaintColorOnItem();
         }
 
-        private void noOrederToolStripMenuItem_Click(object sender, EventArgs e)
+        private void noOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             status_Order = Status_Order.No;
             if (comboBox1.Text == "All Country") LoadDataIntoListview(true);
             else LoadDataIntoListview(false);
         }
 
+        private void PaintColorOnItem()//在loadDataIntoListview跟cancel country用
+        {
+            if (listView1.ShowGroups == false)
+            {
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    if (item.Index % 2 == 0) item.BackColor = Color.Yellow;
+                }
+            }
+        }
+
+        private void EraserColorOnItem()//在country 用
+        {
+            if (listView1.ShowGroups == false)
+            {
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    item.BackColor = Color.White;
+                }
+            }
+        }
 
 
         //================================

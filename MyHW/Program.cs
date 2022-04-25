@@ -20,7 +20,7 @@ namespace MyHW
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            Application.Run(new FrmMyAlbum());
+            Application.Run(new FrmCustomers());
 
             //if ((new FrmLogon()).ShowDialog() == DialogResult.OK)
             //{

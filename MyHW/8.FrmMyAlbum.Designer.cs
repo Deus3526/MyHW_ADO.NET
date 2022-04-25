@@ -97,6 +97,9 @@ namespace MyHW
             this.photoTableAdapter = new MyHW.CityPhotoDataSetTableAdapters.PhotoTableAdapter();
             this.tableAdapterManager = new MyHW.CityPhotoDataSetTableAdapters.TableAdapterManager();
             this.cityTableAdapter = new MyHW.CityPhotoDataSetTableAdapters.CityTableAdapter();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.kijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             cityIDLabel = new System.Windows.Forms.Label();
             cityNameLabel = new System.Windows.Forms.Label();
             photoIDLabel = new System.Windows.Forms.Label();
@@ -131,6 +134,7 @@ namespace MyHW
             ((System.ComponentModel.ISupportInitialize)(this.photoBindingNavigator)).BeginInit();
             this.photoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photoDataGridView)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cityIDLabel
@@ -776,6 +780,27 @@ namespace MyHW
             // 
             this.cityTableAdapter.ClearBeforeFill = true;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 26);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "刪除此圖";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // kijToolStripMenuItem
+            // 
+            this.kijToolStripMenuItem.Name = "kijToolStripMenuItem";
+            this.kijToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kijToolStripMenuItem.Text = "kij";
+            // 
             // FrmMyAlbum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -820,6 +845,7 @@ namespace MyHW
             this.photoBindingNavigator.ResumeLayout(false);
             this.photoBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photoDataGridView)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -887,5 +913,8 @@ namespace MyHW
         private System.Windows.Forms.PictureBox photoPicturePictureBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem kijToolStripMenuItem;
     }
 }
