@@ -20,12 +20,12 @@ namespace MyHW
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            Application.Run(new FrmCustomers());
+            //Application.Run(new FrmMyAlbum());
 
-            //if ((new FrmLogon()).ShowDialog() == DialogResult.OK)
-            //{
-            //    Application.Run(new HomePage());
-            //}
+            if ((new FrmLogon()).ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new HomePage());
+            }
 
         }
     }
